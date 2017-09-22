@@ -1,0 +1,10 @@
+public class Mainclass {
+	public static void main2() {
+		String line1 = "Hau!";
+		String line2 = "Vuh!";
+		Dog koira1 = new Dog("Rekku");
+		Dog koira2 = new Dog("Musti");
+		koira1.speak(line1);
+		koira2.speak(line2);
+	}
+}

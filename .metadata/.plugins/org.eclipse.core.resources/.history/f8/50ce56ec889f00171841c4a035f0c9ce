@@ -1,0 +1,10 @@
+//Koiraluokka
+public class Dog {
+	public Dog(String nimi) {
+		System.out.println("Hei, nimeni on " + nimi + "!");
+	}
+
+	public void speak(String lausahdus) {
+		System.out.println(lausahdus);
+	}
+}

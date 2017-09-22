@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+//Pääluokka
+public class Mainclass {
+	public static void main(String[] args) {
+		String line1 = "Hau!";
+		String line2 = "Vuh!"; //Puhuttavat asiat koirille.
+
+		System.out.println("Anna koiralle nimi: ");
+		Scanner skanneri = new Scanner(System.in);
+		String nimi = skanneri.next();
+
+		Dog koira1 = new Dog(nimi); //Koiraolioiden alustus
+
+		System.out.println("Mitä koira sanoo: ");
+		String puhe = skanneri.next();
+		koira1.speak(puhe); // Puhumismetodin käyttöä
+	}
+}

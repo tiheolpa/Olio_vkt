@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;VT2.5/src&apos;&#x0A;- Original project: &apos;Vt2.4&apos;&#x0A;- Destination element: &apos;VT2.5/src&apos;&#x0A;- Original elements:&#x0A;     Mainclass.java&#x0A;     Dog.java" description="Copy compilation units" destination="=VT2.5/src" element1="/src&lt;{Mainclass.java" element2="/src&lt;{Dog.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1506081610685" units="2" version="1.0"/>
+</session>

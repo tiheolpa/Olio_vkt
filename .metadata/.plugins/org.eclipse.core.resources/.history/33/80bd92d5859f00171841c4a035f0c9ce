@@ -1,0 +1,9 @@
+
+public class Dog {
+	public void main(String nimi) {
+		System.out.println("Hei! Nimeni on " + nimi + " !");
+	}
+	public void speak(String lausahdus) {
+		System.out.println(lausahdus);
+	}
+}
