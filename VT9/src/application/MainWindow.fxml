@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="396.0" prefWidth="432.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60">
+   <children>
+      <SplitPane dividerPositions="0.6979695431472082" orientation="VERTICAL" prefHeight="396.0" prefWidth="432.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField fx:id="startTimeInput" layoutX="26.0" layoutY="143.0" text="Alkamisaika" />
+                  <ChoiceBox fx:id="theaterChoiceBox" layoutX="26.0" layoutY="95.0" prefWidth="150.0" />
+                  <TextField fx:id="dateInput" layoutX="212.0" layoutY="99.0" text="Esityspäivä" />
+                  <TextField fx:id="endTimeInput" layoutX="213.0" layoutY="143.0" text="Päättymisaika" />
+                  <Button fx:id="listerButton" layoutX="27.0" layoutY="186.0" mnemonicParsing="false" onAction="#listerButtonPress" text="Listaa elokuvat" />
+                  <TextField fx:id="nameSearchBox" layoutX="149.0" layoutY="239.0" text="Anna elokuvan nimi" />
+                  <Button fx:id="nameSearchButton" layoutX="325.0" layoutY="239.0" mnemonicParsing="false" onAction="#nameSearchPress" text="Nimihaku" />
+                  <Label layoutX="27.0" layoutY="72.0" text="Valitse teatteri:" />
+                  <Label layoutX="25.0" layoutY="124.0" text="Alkamisväli:" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
