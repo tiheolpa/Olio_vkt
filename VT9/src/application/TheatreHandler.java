@@ -22,19 +22,22 @@ public class TheatreHandler {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			doc = dBuilder.parse(fXmlFile);
+			doc.getDocumentElement().normalize();
+
+			NodeList nList = doc.getElementsByTagName("staff");
+
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+				Node nNode = nList.item(temp);
+			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+				Element eElement = (Element) nNode;
+
+				int AdderID = Integer.parseInt(eElement.getAttribute("ID"));
+				String AdderLocation = eElement.getAttribute("Name");
+				AddTheatre(AdderLocation, AdderID);
+			}
+			}
 		} catch (Exception e) {
-
-		}
-
-		NodeList nList = doc.getElementsByTagName("staff");
-
-		for (int temp = 0; temp < nList.getLength(); temp++) {
-
-			Node nNode = nList.item(temp);
-			Element eElement = (Element) nNode;
-			int AdderID = Integer.parseInt(eElement.getAttribute("ID"));
-			String AdderLocation = eElement.getAttribute("Name");
-			AddTheatre(AdderLocation, AdderID);
+			e.printStackTrace();
 		}
 	}
 
