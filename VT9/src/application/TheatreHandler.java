@@ -11,11 +11,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import javafx.collections.ObservableList;
+
 public class TheatreHandler {
 	Document doc;
 	ArrayList <Theatre> Theatres = new ArrayList <Theatre>();
 	public TheatreHandler() {
-		try { //xml:n lukumenetelmÃ¤, lÃ¶ydetty osoitteesta https://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
+		try { //xml:n lukumenetelmä, löydetty osoitteesta https://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
 			File fXmlFile = new File("TheatreAreas.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -38,5 +40,10 @@ public class TheatreHandler {
 
 	public void AddTheatre(String location, int ID) {
 		Theatres.add(new Theatre(location, ID));
+	}
+
+	@SuppressWarnings("unchecked")
+	public ObservableList<Theatre> GetTheatres() {
+		return (ObservableList<Theatre>) Theatres;
 	}
 }
