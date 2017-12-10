@@ -16,41 +16,25 @@ import javafx.stage.Stage;
 
 public class NewPackageInterfaceController implements Initializable {
 
-    @FXML
-    Button CreatePackageButton;
-    @FXML
-    Button CancelButton;
-    @FXML
-    RadioButton FirstClassButton;
-    @FXML
-    RadioButton SecondClassButton;
-    @FXML
-    RadioButton ThirdClassButton;
-    @FXML
-    CheckBox IsBreakableCheckbox;
-    @FXML
-    TextField NameField;
-    @FXML
-    TextField SizeFieldX;
-    @FXML
-    TextField SizeFieldY;
-    @FXML
-    TextField SizeFieldZ;
-    @FXML
-    TextField MassField;
-    @FXML
-    ChoiceBox SenderCitySelector;
-    @FXML
-    ChoiceBox RecieverCitySelector;
-    @FXML
-    ChoiceBox SenderAutomateSelector;
-    @FXML
-    ChoiceBox RecieverAutomateSelector;
-    @FXML
-    ChoiceBox<Item> ItemChoiceBox;
+    @FXML Button CreatePackageButton;
+    @FXML Button CancelButton;
+    @FXML RadioButton FirstClassButton;
+    @FXML RadioButton SecondClassButton;
+    @FXML RadioButton ThirdClassButton;
+    @FXML CheckBox IsBreakableCheckbox;
+    @FXML TextField NameField;
+    @FXML TextField SizeFieldX;
+    @FXML TextField SizeFieldY;
+    @FXML TextField SizeFieldZ;
+    @FXML TextField MassField;
+    @FXML ChoiceBox SenderCitySelector;
+    @FXML ChoiceBox RecieverCitySelector;
+    @FXML ChoiceBox SenderPostSelector;
+    @FXML ChoiceBox RecieverPostSelector;
+    @FXML ChoiceBox<Item> ItemChoiceBox;
 
     ObservableList<Item> ItemList;
-    Storage stor = new Storage(null);
+    Storage storage = Storage.getInstance();
 
     @FXML
     private void CreatePackageButtonPress() {
@@ -78,7 +62,7 @@ public class NewPackageInterfaceController implements Initializable {
         }
 
         Package box = new Package(content, priority, senderCit, dest);
-        stor.addPackage(box);
+        storage.addPackage(box);
         Stage stage = (Stage) CreatePackageButton.getScene().getWindow();
         stage.close();
     }

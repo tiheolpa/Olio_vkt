@@ -2,12 +2,26 @@ package application;
 
 import java.util.ArrayList;
 
-public class Storage {
-	private ArrayList<Package> packs = new ArrayList<Package>();
-	public Storage(String args[]) {
+public final class Storage {
+    private static final Storage INSTANCE = new Storage();
 
-	}
+    private Storage() {}
+
+    private ArrayList<Package> packs = new ArrayList<Package>();
+
+    public static Storage getInstance() {
+        return INSTANCE;
+    }
+
 	public void addPackage(Package box) {
 		packs.add(box);
+	}
+
+	public ArrayList<Package> GetPackages() {
+		return packs;
+	}
+
+	public Package GetPackage(int id) {
+		return packs.get(id);
 	}
 }

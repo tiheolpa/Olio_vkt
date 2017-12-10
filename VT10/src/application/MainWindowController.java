@@ -61,7 +61,7 @@ public class MainWindowController implements Initializable{
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		webWindow.getEngine().load("index2.html");
+		webWindow.getEngine().load(getClass().getResource("index2.html").toExternalForm());
 		webWindow.getEngine().getLoadWorker().stateProperty().addListener(new ChangeListener<State>() {
 		     @Override
 		     public void changed(ObservableValue ov, State oldState, State newState) { //Menetelmä sivun vaihtumisen havaitsemiseen saatu osoitteesta https://stackoverflow.com/questions/32486758/detect-url-changes-in-javafx-webview

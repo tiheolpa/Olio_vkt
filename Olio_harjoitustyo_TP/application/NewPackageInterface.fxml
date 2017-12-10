@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="458.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="458.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewPackageInterfaceController">
    <children>
       <VBox layoutY="25.0" prefHeight="207.0" prefWidth="249.0">
          <children>
@@ -38,7 +38,7 @@
             <CheckBox fx:id="IsBreakableCheckbox" mnemonicParsing="false" text="Särkyvää" />
          </children>
       </VBox>
-      <Button fx:id="CreatePackageButton" layoutX="380.0" layoutY="397.0" mnemonicParsing="false" onAction="#CreatePackageButtonPress" text="Luo Paketti" />
+      <Button fx:id="CreatePackageButton" layoutX="380.0" layoutY="397.0" mnemonicParsing="false" text="Luo Paketti" />
       <Button fx:id="CancelButton" layoutX="282.0" layoutY="397.0" mnemonicParsing="false" onAction="#CancelButtonPress" text="Peruuta" />
       <VBox layoutX="249.0" layoutY="35.0" prefHeight="207.0" prefWidth="249.0">
          <children>
@@ -49,12 +49,12 @@
          </children>
       </VBox>
       <ChoiceBox fx:id="SenderCitySelector" layoutX="100.0" layoutY="321.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="SenderAutomateSelector" layoutX="100.0" layoutY="354.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="SenderPostSelector" layoutX="100.0" layoutY="354.0" prefWidth="150.0" />
       <Label layoutX="14.0" layoutY="316.0" text="Lähtökaupunki" />
       <Label layoutX="14.0" layoutY="358.0" text="Automaatti" />
       <ChoiceBox fx:id="RecieverCitySelector" layoutX="342.0" layoutY="324.0" prefWidth="150.0" />
       <Label layoutX="256.0" layoutY="319.0" text="Kohdekaupunki" />
-      <ChoiceBox fx:id="RecieverAutomateSelector" layoutX="342.0" layoutY="357.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="RecieverPostSelector" layoutX="342.0" layoutY="357.0" prefWidth="150.0" />
       <Label layoutX="269.0" layoutY="358.0" text="Automaatti" />
    </children>
 </AnchorPane>
