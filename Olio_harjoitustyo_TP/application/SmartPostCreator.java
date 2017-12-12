@@ -23,11 +23,11 @@ public class SmartPostCreator {
 	private HashMap<String, String> map;
 
 	public SmartPostCreator(String filename) {
+
 		try {
 			File xmlFile = new File(filename);
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-
 			doc = dBuilder.parse(xmlFile);
 			doc.getDocumentElement().normalize();
 		} catch (ParserConfigurationException | SAXException | IOException ex) {
@@ -36,30 +36,28 @@ public class SmartPostCreator {
 	}
 
 	public ArrayList<SmartPost> createObjects() {
-		NodeList nodes = doc.getElementsByTagName("current");
+		NodeList nodes = doc.getElementsByTagName("place");
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Node node = nodes.item(i);
 			Element e = (Element) node;
-			map.put("code", getValue("code", e));
+			/* map.put("code", getValue("code", e));
 			map.put("city", getValue("city", e));
 			map.put("adress", getValue("adress", e));
 			map.put("avalibility", getValue("avalibility", e));
 			map.put("postoffice", getValue("postoffice", e));
 			map.put("lat", getValue("lat", e));
-			map.put("lng", getValue("lng", e));
+			map.put("lng", getValue("lng", e)); */
 
-			int ID = Integer.parseInt(map.get("code"));
-			String city = map.get("city");
-			String address = map.get("adress");
-			String aval = map.get("avalibility");
-			String po = map.get("postoffice");
-			double lat = Double.parseDouble(map.get("lat"));
-			double lon = Double.parseDouble(map.get("lng"));
+			int ID = Integer.parseInt(getValue("code", e));
+			String city = getValue("city", e);
+			String address = getValue("address", e);
+			String aval = getValue("availability", e);
+			String po = getValue("postoffice", e);
+			double lat = Double.parseDouble(getValue("lat", e));
+			double lon = Double.parseDouble(getValue("lng", e));
 
-			System.out.println(city);
 			SmartPostList.add(new SmartPost(ID, city, address, aval, po, lat, lon));
 		}
-
 		return SmartPostList;
 
 	}

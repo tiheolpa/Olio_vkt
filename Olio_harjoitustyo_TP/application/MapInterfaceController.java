@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -33,15 +34,16 @@ public class MapInterfaceController implements Initializable {
 	@FXML WebView web;
 
 	Storage storage = Storage.getInstance();
-	SmartPostHandler postHandler = new SmartPostHandler();
+	SmartPostHandler postHandler = SmartPostHandler.getInstance();
 
 	@FXML
 	private void AddToMapButtonPress() {
 		int Selection = PostChoiceBox.getSelectionModel().getSelectedIndex();
+		SmartPost selectedPost = SmartPostHandler.smartPosts.get(Selection);
 		String address = SmartPostHandler.getSmartPosts().get(Selection).adr;
 		String postalcode = Integer.toString(SmartPostHandler.getSmartPosts().get(Selection).postalcode);
 		String postoffice = SmartPostHandler.getSmartPosts().get(Selection).postoffice;
-		String arguments = "(" + address + ", " + postalcode + ", " + postoffice + ")";
+		String arguments = "('" + address + "', '" + postalcode + "', '" + postoffice + "')";
 
 		web.getEngine().executeScript("document.goToLocation" + arguments);
 	}
@@ -57,8 +59,8 @@ public class MapInterfaceController implements Initializable {
 		String color;
 		String priority;
 
-		String arguments = "([" + slat + "," + slon + "," + elat + "," + elon + "]," + color + "," + priority + ")";
-		web.getEngine().executeScript("document.createPath" + arguments);
+		//String arguments = "([" + slat + "," + slon + "," + elat + "," + elon + "], '" + color + "', " + priority + ")";
+		//double distance = (double)web.getEngine().executeScript("document.createPath" + arguments);
 	}
 
 	public void drawRoad() {
@@ -94,7 +96,7 @@ public class MapInterfaceController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		web.getEngine().load(this.getClass().getResource("index2.html").toExternalForm());
+		web.getEngine().load(this.getClass().getResource("index.html").toExternalForm());
 
 		ArrayList<String> spLocationList = new ArrayList<String>();
 		ArrayList<String> PackList = new ArrayList<String>();

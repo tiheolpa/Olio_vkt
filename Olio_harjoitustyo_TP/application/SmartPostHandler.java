@@ -2,11 +2,21 @@ package application;
 
 import java.util.ArrayList;
 
-public class SmartPostHandler {
-	static ArrayList<SmartPost> smartPosts = new ArrayList<SmartPost>();
+public final class SmartPostHandler {
+    private static final SmartPostHandler INSTANCE = new SmartPostHandler();
+
+	public ArrayList<SmartPost> smartPosts = new ArrayList<SmartPost>();
+
+
+	/*static final ArrayList<SmartPost> smartPosts = new ArrayList<SmartPost>() {{
+		for(int i = 0; i < temp.size(); i++) {
+			add(temp.get(i));
+		}
+	}};*/
+
 	ArrayList<String> Cities = new ArrayList<String>();
-	
-	public SmartPostHandler() {
+
+    private SmartPostHandler() {
 		SmartPostCreator creator = new SmartPostCreator("smartpostdata.xml");
 		smartPosts.addAll(creator.createObjects());
 		for(int i = 0; i < smartPosts.size(); i++) {
@@ -14,9 +24,13 @@ public class SmartPostHandler {
 				Cities.add(smartPosts.get(i).cit);
 			}
 		}
-	}
+    }
+    public static SmartPostHandler getInstance() {
+        return INSTANCE;
+    }
 
-	public static ArrayList<SmartPost> getSmartPosts() {
+
+	public ArrayList<SmartPost> getSmartPosts() {
 		return smartPosts;
 	}
 
