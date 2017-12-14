@@ -12,11 +12,8 @@ public class PackageC2 extends Package {
 		endLat = elat;
 		endLon = elon;
 		breaksItems = false;
+		maxDistance = 1100;
 		maxSize = 300;
-
-		/*if(pr == 1) {
-			maxDistance = 150;
-		}*/
 	}
 
 }

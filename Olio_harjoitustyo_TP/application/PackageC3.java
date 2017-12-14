@@ -13,11 +13,7 @@ public class PackageC3 extends Package {
 		endLon = elon;
 		maxDistance = 150;
 		maxSize = 800;
-		breaksItems = true;
-
-		/*if(pr == 1) {
-			maxDistance = 150;
-		}*/
+		breaksItems = false;
 	}
 
 }

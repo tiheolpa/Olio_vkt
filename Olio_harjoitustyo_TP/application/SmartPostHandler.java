@@ -7,13 +7,6 @@ public final class SmartPostHandler {
 
 	public ArrayList<SmartPost> smartPosts = new ArrayList<SmartPost>();
 
-
-	/*static final ArrayList<SmartPost> smartPosts = new ArrayList<SmartPost>() {{
-		for(int i = 0; i < temp.size(); i++) {
-			add(temp.get(i));
-		}
-	}};*/
-
 	ArrayList<String> Cities = new ArrayList<String>();
 
     private SmartPostHandler() {
@@ -37,7 +30,7 @@ public final class SmartPostHandler {
 	public ArrayList<SmartPost> SearchPostsFromCity(String city) {
 		ArrayList<SmartPost> CityPostList = new ArrayList<SmartPost>();
 		for (int i = 0; i < smartPosts.size() - 1; i++) {
-			if(smartPosts.get(i).cit == city) {
+			if(smartPosts.get(i).cit.equals(city)) {
 				CityPostList.add(smartPosts.get(i));
 			}
 		}

@@ -3,15 +3,17 @@ package application;
 import java.util.ArrayList;
 
 public abstract class Package {
+	protected boolean isInDestination = false;
+	protected SmartPost currentPost;
 	protected int priority;
 	protected String senderCity;
 	protected String destination;
-	protected double maxDistance;
 	protected double sendLat;
 	protected double sendLon;
 	protected double endLat;
 	protected double endLon;
 	protected boolean breaksItems;
+	protected double maxDistance;
 	protected double maxSize;
 	protected ArrayList<Item> content = new ArrayList<Item>();
 

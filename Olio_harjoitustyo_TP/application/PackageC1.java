@@ -15,9 +15,12 @@ public class PackageC1 extends Package {
 		breaksItems = true;
 		maxSize = 800;
 
-		/*if(pr == 1) {
-			maxDistance = 150;
-		}*/
+	}
+
+	public void breakContents() {
+		for(int c = 1; c < content.size(); c++) {
+			content.get(c).breakItem();
+		}
 	}
 
 }
