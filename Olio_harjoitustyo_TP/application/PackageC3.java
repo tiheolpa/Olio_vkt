@@ -1,19 +1,14 @@
 package application;
 
-public class PackageC3 extends Package {
+public class PackageC3 extends Package { //Third class package
 
-	public PackageC3(Item cont, String senderCit, String dest, double slat, double slon, double elat, double elon) {
+	public PackageC3(Item cont, SmartPost senderCit, SmartPost dest) {
 		priority = 3;
 		content.add(cont);
-		senderCity = senderCit;
+		senderPost = senderCit;
 		destination = dest;
-		sendLat = slat;
-		sendLon = slon;
-		endLat = elat;
-		endLon = elon;
-		maxDistance = 150;
-		maxSize = 800;
-		breaksItems = false;
+		maxDistance = 200;
+		maxSize = 100*100*100;
+		breaksItems = true;
 	}
-
 }

@@ -1,26 +1,15 @@
 package application;
 
-public class PackageC1 extends Package {
+public class PackageC1 extends Package { //Inherited first class package
 
-	public PackageC1(Item cont, String senderCit, String dest, double slat, double slon, double elat, double elon) {
+	public PackageC1(Item cont, SmartPost senderCit, SmartPost dest) {
 		priority = 1;
 		content.add(cont);
-		senderCity = senderCit;
+		senderPost = senderCit;
 		destination = dest;
-		sendLat = slat;
-		sendLon = slon;
-		endLat = elat;
-		endLon = elon;
 		maxDistance = 150;
 		breaksItems = true;
-		maxSize = 800;
+		maxSize = 100*100*100;
 
 	}
-
-	public void breakContents() {
-		for(int c = 1; c < content.size(); c++) {
-			content.get(c).breakItem();
-		}
-	}
-
 }

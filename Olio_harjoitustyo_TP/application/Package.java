@@ -2,12 +2,12 @@ package application;
 
 import java.util.ArrayList;
 
-public abstract class Package {
+public abstract class Package { //the parent class of packages
 	protected boolean isInDestination = false;
 	protected SmartPost currentPost;
-	protected int priority;
-	protected String senderCity;
-	protected String destination;
+	protected int priority; //Priority = class selected when creating package
+	protected SmartPost senderPost;
+	protected SmartPost destination;
 	protected double sendLat;
 	protected double sendLon;
 	protected double endLat;
@@ -17,20 +17,6 @@ public abstract class Package {
 	protected double maxSize;
 	protected ArrayList<Item> content = new ArrayList<Item>();
 
-	/*public Package(Item cont, String senderCit, String dest, double slat, double slon, double elat, double elon) {
-		content.add(cont);
-		senderCity = senderCit;
-		destination = dest;
-		sendLat = slat;
-		sendLon = slon;
-		endLat = elat;
-		endLon = elon;
-
-		/*if(pr == 1) {
-			maxDistance = 150;
-		}
-	}*/
-
 	public void addItem(Item it) {
 		content.add(it);
 	}
@@ -39,4 +25,14 @@ public abstract class Package {
 		return content;
 	}
 
+	public int breakContents() { //Breaks the contents of the package. Returns integer to state how many items were broken.
+		int itemsBroken = 0;
+		for(int c = 0; c < content.size(); c++) {
+			content.get(c).breakItem();
+			if(content.get(c).isBroken == true) {
+				itemsBroken++;
+			}
+		}
+		return itemsBroken;
+	}
 }

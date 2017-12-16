@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.151" fx:controller="application.InfoWindowController">
+   <left>
+      <GridPane prefHeight="395.0" prefWidth="405.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="581.0" minHeight="10.0" prefHeight="358.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="1024.0" minHeight="8.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextArea prefHeight="97.0" prefWidth="100.0" text="Luokka 1:&#10;Tämä luokka on nopein kuljetustapa.&#10;Tosin, tämän seurauksena on se, että kaikki paketin särkyvä sisältö &#10;hajoaa matkan aikana.&#10;&#10;Maksimitilavuus: 1000000 cm^3&#10;Maksimi kuljetusetäisyys: 150km&#10;&#10;Luokka 2:&#10;Tämä luokka kestää särkyvän tavaran kuljetuksen, ja pystyy &#10;kuljettamaan Lapista Helsinkiin saakka, koska kuljetukseen käytetään &#10;useampaa kuljettajaa. Tosin, suurin pakettikoko on pienempi kuin &#10;muilla.&#10;&#10;Maksimitilavuus:  125000 cm^3&#10;Maksimi kuljetusetäisyys: 1100 km&#10;&#10;Luokka 3:&#10;Tämä pakettiluokka on hitain kuljetusmuoto. Myös paketin käsittely &#10;on rouhkeaa, joten särkyvä sisältö hajoaa matkan aikana.&#10;&#10;Maksimitilavuus: 1000000 cm^3&#10;Maksimi kuljetusetäisyys: 200 km" />
+            <Button fx:id="OkButton" mnemonicParsing="false" onAction="#OkButtonPress" text="Ok" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </left>
+</BorderPane>

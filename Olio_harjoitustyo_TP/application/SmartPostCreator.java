@@ -1,9 +1,9 @@
 package application;
+//This class creates smartposts from an xml file
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,11 +20,10 @@ import org.xml.sax.SAXException;
 public class SmartPostCreator {
 	ArrayList<SmartPost> SmartPostList = new ArrayList<SmartPost>();
 	private Document doc;
-	private HashMap<String, String> map;
 
 	public SmartPostCreator(String filename) {
 
-		try {
+		try { //Open the xml file
 			File xmlFile = new File(filename);
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -36,17 +35,10 @@ public class SmartPostCreator {
 	}
 
 	public ArrayList<SmartPost> createObjects() {
-		NodeList nodes = doc.getElementsByTagName("place");
+		NodeList nodes = doc.getElementsByTagName("place"); //Get nodes with "place" tag
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Node node = nodes.item(i);
 			Element e = (Element) node;
-			/* map.put("code", getValue("code", e));
-			map.put("city", getValue("city", e));
-			map.put("adress", getValue("adress", e));
-			map.put("avalibility", getValue("avalibility", e));
-			map.put("postoffice", getValue("postoffice", e));
-			map.put("lat", getValue("lat", e));
-			map.put("lng", getValue("lng", e)); */
 
 			int ID = Integer.parseInt(getValue("code", e));
 			String city = getValue("city", e);
@@ -59,10 +51,9 @@ public class SmartPostCreator {
 			SmartPostList.add(new SmartPost(ID, city, address, aval, po, lat, lon));
 		}
 		return SmartPostList;
-
 	}
 
-	private String getValue(String tag, Element e) {
+	private String getValue(String tag, Element e) { //Gets the value of a node
 		return ((Element)e.getElementsByTagName(tag).item(0)).getTextContent();
 	}
 }

@@ -2,7 +2,7 @@ package application;
 
 import java.util.ArrayList;
 
-public final class Storage {
+public final class Storage { //Storage singleton class
     private static final Storage INSTANCE = new Storage();
 
     private Storage() {}
